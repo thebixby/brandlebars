@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="styles.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<form id="myForm">
+  <fieldset>
+  <p>
+    <input type="text" placeholder="First Name" name="firstname" id="firstname" required></input>
+  </p>
+  <p>
+    <input type="text" placeholder="Last Name" name="lastname" id="lastname" required></input>
+  </p>
+  <p>
+    <input type="number" placeholder="Employee Number" name="employeenumber" id="employeenumber" min="0" required></input>
+  </p>
+  <p>
+    <input type="text" placeholder="Title" name="title" id="title" required></input>
+  </p>
+  <p>
+    <span>Last Review Rating:</span>
+</br>
+    <select name="lastreview" id="lastreview">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="2">1</option>
+    </select>
+  </p>
+  <p>
+    <input type="number" placeholder="Salary" name="salary" id="salary" min="0" required></input>
+</fieldset>
+    <input type="submit" id="submit" name="submit" value="Submit Employee Information">
+  </p>
+</form>
+
+<table>
+  <thead>
+  <tr>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Employee Number</th>
+    <th scope="col">Title</th>
+    <th scope="col">Last Review Rating</th>
+    <th scope="col">Salary</th>
+    <th scope="col">Remove Employee</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Some</td>
+    <td>Person</td>
+    <td scope="row">2015</td>
+    <td scope="row">Time Lord</td>
+    <td scope="row"><span class="rating five">5</span></td>
+    <td scope="row"><span class="dollar">$</span>100000</td>
+    <td scope="row"><button id="deleteEmp" name="deleteEmp">Delete Employee</button></td>
+  </tr>
+    <tr>
+    <td>Some</td>
+    <td>Person</td>
+    <td scope="row">2015</td>
+    <td scope="row">Time Lord</td>
+    <td scope="row"><span class="rating four">4</span></td>
+    <td scope="row"><span class="dollar">$</span>100000</td>
+    <td scope="row"><button id="deleteEmp" name="deleteEmp">Delete Employee</button></td>
+  </tr>
+    <tr>
+    <td>Some</td>
+    <td>Person</td>
+    <td scope="row">2015</td>
+    <td scope="row">Time Lord</td>
+    <td scope="row"><span class="rating three">3</span></td>
+    <td scope="row"><span class="dollar">$</span>100000</td>
+    <td scope="row"><button id="deleteEmp" name="deleteEmp">Delete Employee</button></td>
+  </tr>
+    <tr>
+    <td>Some</td>
+    <td>Person</td>
+    <td scope="row">2015</td>
+    <td scope="row">Time Lord</td>
+    <td scope="row"><span class="rating two">2</span></td>
+    <td scope="row"><span class="dollar">$</span>100000</td>
+    <td scope="row"><button id="deleteEmp" name="deleteEmp">Delete Employee</button></td>
+  </tr>
+    <tr>
+    <td>Some</td>
+    <td>Person</td>
+    <td scope="row">2015</td>
+    <td scope="row">Time Lord</td>
+    <td scope="row"><span class="rating one">1</span></td>
+    <td scope="row"><span class="dollar">$</span>100000</td>
+    <td scope="row"><button id="deleteEmp" name="deleteEmp">Delete Employee</button></td>
+  </tr>
+  </tbody>
+
+
+</body>
+
+</html>

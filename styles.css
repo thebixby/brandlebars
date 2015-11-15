@@ -1,0 +1,45 @@
+select {
+  padding: 5px;
+}
+input[type="submit"] {
+ margin: 10px;
+}
+
+table {
+  border-spacing: 0px
+}
+
+th, td {
+  padding: 10px 30px 5px 10px;
+}
+th, td {
+  text-align: left;
+}
+
+tr.head th {
+  color: #DDA0DD;
+}
+
+.rating {
+  text-align: center;
+  display: block;
+font-weight: bold;
+}
+
+.rating.five {
+  background-color: #40E0D0;
+}
+
+.rating.four {
+  background-color: #7FFFD4;
+}
+
+.rating.three {
+  background-color: #9ACD32;
+}
+.rating.two {
+  background-color: #FFA500;
+}
+.rating.one {
+  background-color: #CD5C5C;
+}
