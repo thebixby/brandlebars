@@ -13,12 +13,12 @@ $(function() {
 
 	function getData($formElement) {
 		// just return some bullshit:
-		var firstName = $formElement[0];
-		var lastName = $formElement[1];
-		var employeeNumber = $formElement[2];
-		var empTitle = $formElement[3];
-		var lastReview = $formElement[4];
-		var salary = $formElement[5];
+		var firstName = $formElement[0].value;
+		var lastName = $formElement[1].value;
+		var employeeNumber = $formElement[2].value;
+		var empTitle = $formElement[3].value;
+		var lastReview = $formElement[4].value;
+		var salary = $formElement[5].value;
 
 
 		var employee = new Employee(firstName, lastName, employeeNumber, empTitle, lastReview, salary);
