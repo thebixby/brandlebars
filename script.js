@@ -11,7 +11,7 @@ $(function() {
 	}
 
 
-	function getData($formElement) {
+	function createEmployeeFromForm($formElement) {
 		// just return some bullshit:
 		var firstName = $formElement[0].value;
 		var lastName = $formElement[1].value;
@@ -27,13 +27,63 @@ $(function() {
 
 	}
 
+	function createFakeTemplate(employeeData) {
+		console.log(employeeData);
+		var template = '<tr>'
+			+ '<td>'
+			+ employeeData.firstName
+			+ '</td>'
+
+			+ '<td>'
+			+ employeeData.lastName
+			+ '</td>'
+
+			+ '<td scope=\"row\">'
+			+ employeeData.employeeNumber
+			+ '</td>'
+
+			+ '<td scope=\"row\">'
+			+ employeeData.empTitle
+			+ '</td>'
+
+			+ '<td scope=\"row\">'
+			+ '<span class=\"rating five\">'
+			+ employeeData.lastReview
+			+ '</span>'
+			+ '</td>'
+
+			+ '<td scope=\"row\">'
+			+ '<span class=\"dollar\">'
+			+ "$"
+			+ '</span>'
+			+ employeeData.salary
+			+ '</td>'
+
+			+ '<td scope=\"row\">'
+			+ '<button id=\"deleteEmp\" name=\"deleteEmp\">'
+			+ 'Delete Employee'
+			+ '</button>'
+			+ '</td>'
+			+ '</tr>';
+
+			return template;
+
+
+			
+
+	}
+
 	$('form#myForm').on('submit', function(event) {
+		// HTML --> Data
 		event.preventDefault();
-		console.log(event);
 		var formData = $(this).serializeArray();
-		console.log(formData);
-		var results = getData(formData);
-		console.log(results);
+		var employeeObject = createEmployeeFromForm(formData);
+		console.log(employeeObject);
+
+		// Data --> HTML
+		var fakeResults = createFakeTemplate(employeeObject);
+		var $newListItem = $(fakeResults);
+		$('.employeeList').append($newListItem);
 
 	});
 
