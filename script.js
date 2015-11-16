@@ -9,6 +9,7 @@ $(function() {
 		this.salary = salary;
 
 	}
+	var employeeArray = [];
 
 
 	function createEmployeeFromForm($formElement) {
@@ -81,6 +82,7 @@ $(function() {
 		event.preventDefault();
 		var formData = $(this).serializeArray();
 		var employeeObject = createEmployeeFromForm(formData);
+		employeeArray.push(employeeObject);
 		console.log(employeeObject);
 
 
