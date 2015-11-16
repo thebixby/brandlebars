@@ -30,7 +30,6 @@ $(function() {
 			console.log(employeeData);
 			var rating = employeeData.lastReview;
 			var ratingClass = '';
-			debugger;
 			switch (rating) {
 				case '5':
 					ratingClass = 'five';
