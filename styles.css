@@ -1,3 +1,12 @@
+body {
+  margin: auto;
+  width: 70%;
+}
+
+.penguinCorp {
+  text-align: center;
+}
+
 select {
   padding: 5px;
 }
@@ -16,8 +25,12 @@ th, td {
   text-align: left;
 }
 
-tr.head th {
-  color: #DDA0DD;
+.employeeHeader {
+  background-color: #DDA0DD;
+}
+
+tbody tr:nth-child(odd) {
+  background: #eee;
 }
 
 .rating {

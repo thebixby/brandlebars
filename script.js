@@ -18,7 +18,7 @@ $(function() {
 		var empTitle = $formElement[3].value;
 		var lastReview = $formElement[4].value;
 		var salary = $formElement[5].value;
-	
+
 
 
 		var employee = new Employee(firstName, lastName, employeeNumber, empTitle, lastReview, salary);
@@ -71,7 +71,9 @@ $(function() {
 
 	$('.employeeList').on('click', '.deleteEmp', function() {
 		console.log('Delete Registered');
-		$(this).closest('tr').remove();
+		$(this).closest('tr').fadeOut(800, function() {
+			$(this).remove();
+		});
 	});
 
 	$('form#myForm').on('submit', function(event) {
@@ -86,6 +88,7 @@ $(function() {
 		var fakeResults = createFakeTemplate(employeeObject);
 		var $newListItem = $(fakeResults);
 		$('.employeeList').append($newListItem);
+		$newListItem.hide().fadeIn(1000);
 
 	});
 
