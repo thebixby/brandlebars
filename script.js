@@ -18,6 +18,7 @@ $(function() {
 		var empTitle = $formElement[3].value;
 		var lastReview = $formElement[4].value;
 		var salary = $formElement[5].value;
+	
 
 
 		var employee = new Employee(firstName, lastName, employeeNumber, empTitle, lastReview, salary);
