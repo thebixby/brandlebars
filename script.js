@@ -1,34 +1,31 @@
-$(function() {
+function Employee(firstName, lastName, employeeNumber, empTitle, lastReview, salary) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.employeeNumber = employeeNumber;
+  this.empTitle = empTitle;
+  this.lastReview = lastReview;
+  this.salary = salary;
+  this.asdfasdf = null;
 
-	function Employee(firstName, lastName, employeeNumber, empTitle, lastReview, salary) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.employeeNumber = employeeNumber;
-		this.empTitle = empTitle;
-		this.lastReview = lastReview;
-		this.salary = salary;
+}
 
-	}
-	var employeeArray = [];
+var employeeArray = [];
 
+function createEmployeeFromForm($formElement) {
+  var firstName = $formElement[0].value;
+  var lastName = $formElement[1].value;
+  var employeeNumber = $formElement[2].value;
+  var empTitle = $formElement[3].value;
+  var lastReview = $formElement[4].value;
+  var salary = $formElement[5].value;
 
-	function createEmployeeFromForm($formElement) {
-		var firstName = $formElement[0].value;
-		var lastName = $formElement[1].value;
-		var employeeNumber = $formElement[2].value;
-		var empTitle = $formElement[3].value;
-		var lastReview = $formElement[4].value;
-		var salary = $formElement[5].value;
+  var employee = new Employee(firstName, lastName, employeeNumber, empTitle, lastReview, salary);
 
+  return employee;
 
+}
 
-		var employee = new Employee(firstName, lastName, employeeNumber, empTitle, lastReview, salary);
-
-		return employee;
-
-	}
-
-	function createFakeTemplate(employeeData) {
+/*function createFakeTemplate(employeeData) {
 		console.log(employeeData);
 		var rating = employeeData.lastReview;
 		var ratingClass = '';
@@ -49,8 +46,8 @@ $(function() {
 				ratingClass = 'one';
 				break;
 		}
-
-		var template = '<tr>' + '<td>' + employeeData.firstName + '</td>'
+*/
+/*		var template = '<tr>' + '<td>' + employeeData.firstName + '</td>'
 
 		+'<td>' + employeeData.lastName + '</td>'
 
@@ -68,31 +65,35 @@ $(function() {
 		return template;
 
 
-	}
+	}*/
 
-	$('.employeeList').on('click', '.deleteEmp', function() {
-		console.log('Delete Registered');
-		$(this).closest('tr').fadeOut(800, function() {
-			$(this).remove();
-		});
-	});
+var source = $("#employee-list").html();
+var template = Handlebars.compile(source);
+/*$('.employeeTable').append(template(employeeData));
+*/
+$('.employeeList').on('click', '.deleteEmp', function() {
+  console.log('Delete Registered');
+  $(this).closest('tr').fadeOut(800, function() {
+    $(this).remove();
+  });
+});
 
-	$('form#myForm').on('submit', function(event) {
-		// HTML --> Data
-		event.preventDefault();
-		var formData = $(this).serializeArray();
-		var employeeObject = createEmployeeFromForm(formData);
-		employeeArray.push(employeeObject);
-		console.log(employeeObject);
+$('form#myForm').on('submit', function(event) {
+  // HTML --> Data
+  
+  event.preventDefault();
+  var formData = $(this).serializeArray();
+  var employeeObject = createEmployeeFromForm(formData);
+  employeeArray.push(employeeObject);
+  console.log(employeeObject);
 
+  // Data --> HTML
 
-		// Data --> HTML
-		var fakeResults = createFakeTemplate(employeeObject);
-		var $newListItem = $(fakeResults);
-		$('.employeeList').append($newListItem);
-		$newListItem.hide().fadeIn(1000);
-
-	});
-
+  var workerHTML = (template(employeeArray));
+  $('.employeeList').html(workerHTML);
+  /*var fakeResults = createFakeTemplate(employeeObject);*/
+/*  var $newListItem = $(fakeResults);*/
+ /* $('.employeeList').append($newListItem);*/
+/*  $newListItem.hide().fadeIn(1000);*/
 
 });
